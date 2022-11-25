@@ -1,6 +1,33 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
+<style>
+    .repositorio{
+        background-color: #fdfdff;
+        border: none;/*1px solid gray; */
+        border-radius: 35px; 
+        padding: 10px 12px; 
+        display: block;
+    }
+
+    .pdf a{
+        border: 1px solid gray; 
+        border-radius: 2px; 
+        color: rgb(110, 23, 23); 
+        padding: 2px 4px;
+    }
+
+    .acoes{
+        padding-bottom: 10px;
+        margin-bottom: 40px; 
+        border-bottom: 1px solid gray; 
+        border-radius: 4px;
+    }
+    div.conteudo  h3 {
+        font-size: 18px; margin-top: -15px; white-space: pre-wrap;
+    }
+
+</style>
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />        
@@ -23,7 +50,7 @@
             {% for r in repositorio %}
                 <h2 style="font-size: 22px; color:green">{{ r.titulor }} </h2>
                 <br>
-                <h3 style="font-size: 18px; margin-top: -15px">{{ r.descricao }}</h3>
+                <h3>{{ r.descricao }}</h3>
                 <br>
                 <div class="pdf" style="margin-bottom: 20px;">
                     <a href="{{ r.arquivo.url }}"><i class="fa-solid fa-file-pdf"></i> PDF</a>
@@ -51,29 +78,6 @@
             <i class="fa-solid fa-backward-step"></i> VOLTAR</a>
     </div>
 
-    <style>
-        .repositorio{
-            background-color: #fdfdff;
-            border: none;/*1px solid gray; */
-            border-radius: 35px; 
-            padding: 10px 12px; 
-            display: block;
-        }
-
-        .pdf a{
-            border: 1px solid gray; 
-            border-radius: 2px; 
-            color: rgb(110, 23, 23); 
-            padding: 2px 4px;
-        }
-
-        .acoes{
-            padding-bottom: 10px;
-            margin-bottom: 40px; 
-            border-bottom: 1px solid gray; 
-            border-radius: 4px;
-        }
-
-    </style>
+    
     </body>
 {% endblock %}

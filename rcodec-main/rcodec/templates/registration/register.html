@@ -21,6 +21,7 @@
     <title>Login</title>
     </head>
     <body>
+    {% if user.is_authenticated %}
     <div class="container">
     <main class="login-form">
         <div class="cotainer">
@@ -72,6 +73,7 @@
         </div>
     </main>
     </div>
+    {% endif %}
     </body>
     </html>
 {% endblock %}

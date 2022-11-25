@@ -1,12 +1,16 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from rcodec.models import Tcc
+from django import forms
 from django.forms import ModelForm
 
 class TccForm(ModelForm):
     class Meta:
         model = Tcc
         fields = '__all__'
+        widgets = {
+            'descricao' : forms.Textarea()
+        }
 
 def listar(request):
     tcc =  Tcc.objects.all()

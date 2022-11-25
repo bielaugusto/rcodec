@@ -24,7 +24,7 @@
             {% for t in tcc %}
                 <h2 style="font-size: 22px; color:green">{{ t.titulot }} </h2>
                 <br>
-                <h3 style="font-size: 18px; margin-top: -15px">{{ t.descricao }}</h3>
+                <h3>{{ t.descricao }}</h3>
                 <br>
                 <div class="pdf">
                     <a href="{{ t.arquivo.url }}"><i class="fa-solid fa-file-pdf"></i> PDF</a>
@@ -56,9 +56,9 @@
     <style>
         .repositorio{
             background-color: #fdfdfd;
-            border: 1px solid gray; 
+            border: none /*1px solid gray*/; 
             border-radius: 35px; 
-            padding: 10px 12px; 
+            padding: 15px 12px; 
             display: block;
         }
 
@@ -78,6 +78,10 @@
             border-bottom: 1px solid gray; 
             border-radius: 4px;
         }
+
+        div.conteudo  h3 {
+        font-size: 18px; margin-top: -15px; white-space: pre-wrap;
+    }
 
     </style>
     </body>
