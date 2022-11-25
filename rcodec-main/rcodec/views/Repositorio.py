@@ -1,12 +1,16 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from rcodec.models import Repositorio
+from django import forms
 from django.forms import ModelForm
 
 class RepositorioForm(ModelForm):
     class Meta:
         model = Repositorio
         fields = '__all__'
+        widgets = {
+            'descricao' : forms.Textarea()
+        }
 
 def listar(request):
     repositorio =  Repositorio.objects.all()

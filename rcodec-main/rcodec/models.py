@@ -2,6 +2,7 @@ from enum import unique
 from tkinter.messagebox import YES
 from unicodedata import decimal
 from django.db import models
+from django.forms.widgets import Textarea
 from rcodec.settings import BASE_DIR
 
 class Repositorio (models.Model):
